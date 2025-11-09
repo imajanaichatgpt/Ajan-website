@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJAN | Pro Gaming Universe from Kosovo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #00ffff, #00ff6a, #ff00cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    /* HERO - Fortnite */
+    .hero {
+      height: 100vh;
+      background: url('https://cdn-0001.qstv.on.epicgames.com/RklWwrfVZENbvaQwpC/image/landscape_comp_s.jpeg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #00ffcc, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 15px #00ffff; }
+      to { text-shadow: 0 0 35px #ff00ff; }
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: #ddd;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      color: #000;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00ffff;
+    }
+
+    /* GAMES */
+    .games {
+      padding: 100px 30px;
+      background: #080808;
+      text-align: center;
+    }
+
+    .games h2 {
+      font-size: 2.8rem;
+      margin-bottom: 60px;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .game-card {
+      width: 320px;
+      height: 200px;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      transition: 0.4s;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      transition: 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px rgba(255,0,255,0.4);
+    }
+
+    .game-card:hover img {
+      filter: brightness(1);
+    }
+
+    .game-card .title {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #00ffff;
+      text-shadow: 0 0 10px #000;
+    }
+
+    .game-card .credits {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.7rem;
+      color: #aaa;
+    }
+
+    /* ABOUT */
+    .about {
+      background: linear-gradient(180deg, #000, #101010);
+      padding: 100px 30px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #00ffff;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #888;
+    }
+
+    footer span {
+      color: #00ffff;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.6rem; }
+      .hero p { font-size: 1rem; }
+      .cta-btn {
+        width: 80%;
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+      .game-card { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AJAN</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to AJAN</h1>
+      <p>Pro gaming experience from <strong>Kosovo</strong> — featuring Fortnite, Call of Duty, Minecraft, and Roblox (Blox Fruits).</p>
+      <a href="mailto:ajanjashari853@gmail.com">
+        <button class="cta-btn">Join the Action</button>
+      </a>
+    </div>
+  </section>
+
+  <section class="games" id="games">
+    <h2>Top Games</h2>
+    <div class="game-grid">
+      <div class="game-card">
+        <img src="https://i.ytimg.com/vi/EnyRmSHLPfo/hq720.jpg" alt="Fortnite Pro Gameplay">
+        <div class="title">Fortnite (Pro)</div>
+        <div class="credits">© Epic Games</div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://xboxwire.thesourcemediaassets.com/sites/2/2025/04/BO6-WZ-SEASON-03-RETURNTOVERDANSK-044-5871ca65cbe7d66bb817.jpg" alt="Call of Duty Gameplay">
+        <div class="title">Call of Duty</div>
+        <div class="credits">© Activision</div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://images.igdb.com/igdb/image/upload/t_original/ar30cy.jpg" alt="Minecraft Gameplay">
+        <div class="title">Minecraft</div>
+        <div class="credits">© Mojang Studios</div>
+      </div>
+
+      <div class="game-card">
+        <img src="https://wallpapers.com/images/high/blox-fruits-adventure-scene-z02iokdjgwcwau6t.jpg" alt="Roblox Blox Fruits Island">
+        <div class="title">Roblox (Blox Fruits)</div>
+        <div class="credits">© Roblox Corporation</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About AJAN</h2>
+    <p>
+      AJAN is a gaming brand proudly created in <strong>Kosovo 🇽🇰</strong>.  
+      We represent the next generation of gamers — creative, skilled, and competitive in Fortnite, Call of Duty, Minecraft, and Roblox.  
+      Contact us at <strong>ajanjashari853@gmail.com</strong> to collaborate or join our community!
+    </p>
+  </section>
+
+  <footer>
+    © 2025 <span>AJAN</span> | Made with ❤️ in Kosovo 🇽🇰 | Screenshots © their respective developers.
+  </footer>
+</body>
+</html>
